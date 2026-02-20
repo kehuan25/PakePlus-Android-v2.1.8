@@ -211,16 +211,17 @@
 
         @media (max-width: 480px) {
             body {
-                padding: 0;
+                padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
                 background: #000;
                 display: flex;
                 justify-content: center;
                 align-items: flex-end;
                 overflow: hidden;
+                min-height: 100vh;
             }
             
             .calculator {
-                padding: 20px;
+                padding: 20px calc(20px + env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) calc(20px + env(safe-area-inset-left));
                 border-radius: 0;
                 box-shadow: none;
                 max-width: 100%;
@@ -228,6 +229,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
+                width: 100%;
             }
 
             .display {
@@ -252,21 +254,21 @@
             }
 
             .toggle-sign .plus {
-                top: 22px;
+                top: 20px;
                 left: 24px;
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .toggle-sign .slash {
-                top: 22px;
-                left: 32px;
-                font-size: 32px;
+                top: 20px;
+                left: 31px;
+                font-size: 28px;
             }
 
             .toggle-sign .minus {
-                top: 30px;
+                top: 28px;
                 left: 38px;
-                font-size: 24px;
+                font-size: 22px;
             }
         }
 
@@ -310,7 +312,7 @@
 
             .toggle-sign .minus {
                 top: 30px;
-                left: 36px;
+                left: 38px;
                 font-size: 24px;
             }
         }
